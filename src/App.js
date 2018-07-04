@@ -1,13 +1,18 @@
 import React, { Component } from 'react';
+import { Provider } from 'react-redux';
+import { createStore, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
+import reducers from 'reducers';
 import Header from 'components/Header';
-import './App.css';
+
+const store = createStore(reducers, applyMiddleware(thunk));
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
+      <Provider store={store}>
           <Header />
-      </div>
+      </Provider>
     );
   }
 }
