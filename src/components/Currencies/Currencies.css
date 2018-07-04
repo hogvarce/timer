@@ -1,0 +1,94 @@
+.root {
+   width: 100%;
+}
+
+.back {
+    height: 48px;
+    background-color: #131521;
+    border-radius: 3px;
+    box-shadow: #0000008f 0px 13px 30px;
+    padding: 11px 18px;
+    color: #BFD1FD;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.title {
+    font-size: 11px;
+}
+
+.dollar {
+    display: flex;
+    color: #E4E7FF;
+    font-size: 18px;
+    line-height: 29px;
+    margin-left: 31px;
+}
+
+.dollar__value {
+    font-size: 22px;
+    line-height: 27px;
+    margin-left: 12px;
+    color: #00D95F;
+}
+
+.euro {
+    display: flex;
+    color: #E4E7FF;
+    font-size: 18px;
+    line-height: 29px;
+    margin-left: 31px;
+}
+
+.euro__value {
+    font-size: 22px;
+    line-height: 27px;
+    margin-left: 12px;
+    color: #EB5757;
+}
+
+.rub {
+    display: flex;
+    color: #E4E7FF;
+    font-size: 18px;
+    line-height: 29px;
+    margin-left: 31px;
+}
+
+.rub__value {
+    font-size: 22px;
+    line-height: 27px;
+    margin-left: 12px;
+    color: #00D95F;
+}
+
+@media (max-width: 480px) {
+    .back {
+        margin-top: 20px;
+    }
+    .dollar {
+        font-size: 15px;
+        margin-left: 20px;
+    }
+
+    .dollar__value {
+        font-size: 15px;
+    }
+    .euro {
+        font-size: 15px;
+        margin-left: 20px;
+    }
+
+    .euro__value {
+        font-size: 15px;
+    }
+    .rub {
+        font-size: 15px;
+        margin-left: 20px;
+    }
+
+    .rub__value {
+        font-size: 15px;
+    }
+}
