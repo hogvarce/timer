@@ -34,33 +34,20 @@
 }
 
 .euro {
-    display: flex;
-    color: #E4E7FF;
-    font-size: 18px;
-    line-height: 29px;
-    margin-left: 31px;
+    composes: dollar;
 }
 
 .euro__value {
-    font-size: 22px;
-    line-height: 27px;
-    margin-left: 12px;
+    composes: dollar__value;
     color: #EB5757;
 }
 
 .rub {
-    display: flex;
-    color: #E4E7FF;
-    font-size: 18px;
-    line-height: 29px;
-    margin-left: 31px;
+    composes: dollar;
 }
 
 .rub__value {
-    font-size: 22px;
-    line-height: 27px;
-    margin-left: 12px;
-    color: #00D95F;
+    composes: dollar__value;
 }
 
 @media (max-width: 480px) {
@@ -73,22 +60,6 @@
     }
 
     .dollar__value {
-        font-size: 15px;
-    }
-    .euro {
-        font-size: 15px;
-        margin-left: 20px;
-    }
-
-    .euro__value {
-        font-size: 15px;
-    }
-    .rub {
-        font-size: 15px;
-        margin-left: 20px;
-    }
-
-    .rub__value {
         font-size: 15px;
     }
 }
