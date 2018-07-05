@@ -1,0 +1,20 @@
+.root {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hour {
+    font-size: 48px;
+    font-weight: lighter;
+    line-height: 59px;
+}
+
+.minute {
+    composes: hour;
+}
+
+.second {
+    composes: hour;
+    opacity: 0.5;
+}

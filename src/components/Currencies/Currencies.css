@@ -24,6 +24,18 @@
     font-size: 18px;
     line-height: 29px;
     margin-left: 31px;
+    position: relative;
+}
+
+.dollar:after {
+    content: "";
+    width: 1px;
+    height: 100%;
+    background: #fff;
+    opacity: 0.1;
+    display: block;
+    position: absolute;
+    right: -15px;
 }
 
 .dollar__value {
@@ -44,6 +56,10 @@
 
 .rub {
     composes: dollar;
+}
+
+.rub:after {
+    display: none;
 }
 
 .rub__value {

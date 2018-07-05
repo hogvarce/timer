@@ -1,0 +1,22 @@
+.root {
+    margin: 0 auto;
+    width: 310px;
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 8px;
+    background-color: #009CDE;
+    margin-bottom: 40px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.name {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+}
+
