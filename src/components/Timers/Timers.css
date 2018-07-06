@@ -1,0 +1,38 @@
+:global .modal-content {
+    background-color: #2A3F75;
+    border-radius: 4px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0 12px 12px;
+}
+
+:global .modal-body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.title_modal {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+}
+
+.alarm_clock {
+    margin: 30px auto;
+}
+
+.timer_name {
+    font-size: 14px;
+    line-height: 17px;
+    background: none;
+    border: 0;
+    border-bottom: 1px solid #fff;
+    border-radius: 0;
+    outline: 0;
+    width: 100%;
+}
+
+.form {
+    width: 100%;
+    padding: 0 60px;
+}

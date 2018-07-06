@@ -19,3 +19,9 @@ export function getTimersSuccess({ data }) {
         payload: { data },
     }
 }
+
+export function addNewTimer() {
+    return (dispatch) => {
+        axios.get(`http://5b3cc99595bf8d0014a1d6c4.mockapi.io/timers/post`)
+    };
+}

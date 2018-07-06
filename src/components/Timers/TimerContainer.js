@@ -12,6 +12,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = {
     getTimers: TimersActions.getTimers,
+    addNewTimer: TimersActions.addNewTimer,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Timers);

@@ -1,0 +1,19 @@
+.root {
+    margin: 0 auto;
+    width: 310px;
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 8px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+}
+
+.add_text {
+    font-size: 14px;
+    line-height: 17px;
+    opacity: 0.5;
+    margin-top: 24px;
+}
