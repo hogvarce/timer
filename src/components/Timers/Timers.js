@@ -16,6 +16,9 @@ export default class Timers extends PureComponent {
             name: null,
             timeLeft: 0,
         },
+        hours: 0,
+        minutes: 0,
+        seconds: 0,
     };
 
     componentDidMount() {
@@ -23,8 +26,17 @@ export default class Timers extends PureComponent {
     }
 
     onAddTimer = () => {
-        this.props.addNewTimer(this.state.timer);
+        const timeLeft = this.calculateTimeLeft();
+        this.props.addNewTimer({
+            ...this.state.timer,
+            timeLeft,
+        });
         this.handleClose();
+    };
+
+    calculateTimeLeft = () => {
+        const { hours, minutes, seconds } = this.state;
+        return (hours * 1000 * 60 * 60) + (minutes * 1000 * 60) + (seconds * 1000);
     };
 
     handleClose = () => {
@@ -33,7 +45,10 @@ export default class Timers extends PureComponent {
             timer: {
                 ...state.timer,
                 timeLeft: 0,
-            }
+            },
+            hours: 0,
+            minutes: 0,
+            seconds: 0,
         }));
     };
 
@@ -45,26 +60,19 @@ export default class Timers extends PureComponent {
         let value = get(e, 'target.value');
         switch(id) {
             case 'hours': {
-                value = value * 1000 * 60 * 60;
+                this.setState({ hours: value });
                 break;
             }
             case 'minutes': {
-                value = value * 1000 * 60;
+                this.setState({ minutes: value });
                 break;
             }
             case 'seconds': {
-                value *= 1000;
+                this.setState({ seconds: value });
                 break;
             }
             default:
         }
-        this.setState(({ timer }) => ({
-                timer: {
-                    ...timer,
-                    timeLeft: timer.timeLeft + value,
-                }
-            }
-        ));
     };
 
     handleName = (e) => {
