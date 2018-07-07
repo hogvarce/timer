@@ -1,1 +1,1 @@
-export { default } from './TimerItem';
+export { default } from './TimerItemContainer';

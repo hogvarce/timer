@@ -41,3 +41,24 @@ export function addNewTimerSuccess({ data }) {
         dispatch(getTimers());
     };
 }
+
+export function deleteTimer(id) {
+    return (dispatch) => {
+        axios.delete(`http://5b3cc99595bf8d0014a1d6c4.mockapi.io/timers/${id}`)
+            .then(function () {
+                dispatch(deleteTimerSuccess());
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+    };
+}
+
+export function deleteTimerSuccess() {
+    return (dispatch) => {
+        dispatch({
+            type: TimersConstants.DELETE_TIMER_SUCCESS,
+        });
+        dispatch(getTimers());
+    };
+}
