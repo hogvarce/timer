@@ -9,12 +9,14 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    padding: 0;
 }
 
 .title_modal {
     font-weight: 600;
     font-size: 20px;
     line-height: 24px;
+    margin-bottom: 20px;
 }
 
 .alarm_clock {
@@ -34,5 +36,78 @@
 
 .form {
     width: 100%;
+}
+
+.time {
+    margin-bottom: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
     padding: 0 60px;
+}
+
+.hours {
+    background: #232B48;
+    border: 0;
+    font-size: 32px;
+    line-height: 39px;
+    height: 60px;
+    border-radius: 4px;
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+.minutes {
+    composes: hours;
+}
+
+.seconds {
+    composes: hours;
+}
+
+.hours_block {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.hours_block > label{
+    opacity: 0.5;
+    font-size: 12px;
+    line-height: 15px;
+}
+
+.minutes_block {
+    composes: hours_block;
+    margin: 0 15px;
+}
+
+.seconds_block {
+    composes: hours_block;
+}
+
+.clear {
+    clear: both;
+    width: 100%;
+    height: 1px;
+    background-color: white;
+    opacity: 0.2;
+}
+
+.submit {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+.cancel {
+    padding: 24px 60px;
+    cursor: pointer;
+}
+
+.apply {
+    composes: cancel;
 }

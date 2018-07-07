@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import { Grid, Col, Row, Modal, Form, FormControl } from 'react-bootstrap';
+import { Grid, Col, Row, Modal, Form, FormControl, ControlLabel } from 'react-bootstrap';
 import TimerItem from 'components/TimerItem';
 import AddTimer from 'components/AddTimer';
 import gameThrone from 'static/game_throne.png'
@@ -18,7 +18,7 @@ export default class Timers extends PureComponent {
     }
 
     onAddTimer = () => {
-        this.handleShow();
+        console.log('added');
     };
 
     handleClose = () => {
@@ -41,20 +41,60 @@ export default class Timers extends PureComponent {
                         </Col>
                     ))}
                     <Col  md={4}>
-                        <AddTimer addNewTimer={this.onAddTimer}/>
+                        <AddTimer addNewTimer={this.handleShow}/>
                     </Col>
                     <Modal show={this.state.show} onHide={this.handleClose}>
                         <Modal.Body>
                             <img className={styles.alarm_clock} src={alarm} alt="set timer" />
                             <div className={styles.title_modal}>Set the Timer</div>
                             <Form className={styles.form}>
-                                <FormControl
-                                    id="name"
-                                    type="text"
-                                    placeholder="Timer Name"
-                                    bsSize="large"
-                                    bsClass={styles.timer_name}
-                                />
+                                <div className={styles.time}>
+                                    <FormControl
+                                        id="name"
+                                        type="text"
+                                        placeholder="Timer Name"
+                                        bsSize="large"
+                                        bsClass={styles.timer_name}
+                                    />
+                                </div>
+                                <div className={styles.time}>
+                                    <div className={styles.hours_block}>
+                                        <FormControl
+                                            id="hours"
+                                            type="number"
+                                            bsSize="large"
+                                            bsClass={styles.hours}
+                                            defaultValue="0"
+                                            label="hours"
+                                        />
+                                        <ControlLabel>HOURS</ControlLabel>
+                                    </div>
+                                    <div className={styles.minutes_block}>
+                                        <FormControl
+                                            id="minutes"
+                                            type="number"
+                                            bsSize="large"
+                                            bsClass={styles.minutes}
+                                            defaultValue="0"
+                                        />
+                                        <ControlLabel>MINUTES</ControlLabel>
+                                    </div>
+                                    <div className={styles.seconds_block}>
+                                        <FormControl
+                                            id="seconds"
+                                            type="number"
+                                            bsSize="large"
+                                            bsClass={styles.seconds}
+                                            defaultValue="0"
+                                        />
+                                        <ControlLabel>SECONDS</ControlLabel>
+                                    </div>
+                                </div>
+                                <div className={styles.clear} />
+                                <div className={styles.submit}>
+                                    <div className={styles.cancel} onClick={this.handleClose}>Cancel</div>
+                                    <div className={styles.apply} onClick={this.onAddTimer}>Add Timer</div>
+                                </div>
                             </Form>
                         </Modal.Body>
                     </Modal>
