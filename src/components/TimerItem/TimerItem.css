@@ -160,3 +160,24 @@
 .delete_timer {
     composes: cancel;
 }
+
+.timer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hours {
+    font-size: 48px;
+    font-weight: lighter;
+    line-height: 59px;
+}
+
+.minutes {
+    composes: hours;
+}
+
+.seconds {
+    composes: hours;
+    opacity: 0.5;
+}
