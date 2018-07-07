@@ -20,8 +20,24 @@ export function getTimersSuccess({ data }) {
     }
 }
 
-export function addNewTimer() {
+export function addNewTimer(newTimer) {
     return (dispatch) => {
-        axios.get(`http://5b3cc99595bf8d0014a1d6c4.mockapi.io/timers/post`)
+        axios.post(`http://5b3cc99595bf8d0014a1d6c4.mockapi.io/timers/`, newTimer)
+            .then(function (response) {
+                dispatch(addNewTimerSuccess(response));
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+    };
+}
+
+export function addNewTimerSuccess({ data }) {
+    return (dispatch) => {
+        dispatch({
+            type: TimersConstants.ADD_NEW_TIMER_SUCCESS,
+            payload: { newTimer: data },
+        });
+        dispatch(getTimers());
     };
 }
