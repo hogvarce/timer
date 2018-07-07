@@ -28,6 +28,7 @@ export default class TimerItem extends PureComponent {
         showDelete: false,
         showReset: false,
         timer: new Timer(),
+        isPaused: false,
     };
 
     componentWillMount() {
@@ -82,9 +83,23 @@ export default class TimerItem extends PureComponent {
         });
     };
 
+    stopTimer = () => {
+        this.state.timer.pause();
+        this.setState({
+            isPaused: true,
+        });
+    };
+
+    startTimer = () => {
+        this.state.timer.start();
+        this.setState({
+            isPaused: false,
+        });
+    };
+
     render() {
         const { name, styleDiv, index } = this.props;
-        const { settingsIsOpen } = this.state;
+        const { settingsIsOpen, isPaused } = this.state;
         const settingsClass = classNames({
             [styles.settings_hidden]: !settingsIsOpen,
             [styles.settings]: settingsIsOpen,
@@ -106,7 +121,10 @@ export default class TimerItem extends PureComponent {
                 <div className={styles.icon_setting} onClick={this.onToggleSettings}>
                     <img src={iconSetting} alt="settings" />
                 </div>
-                <div className={styles.stop}>Stop Timer</div>
+                {isPaused
+                    ? <div className={styles.stop} onClick={this.startTimer}>Start Timer</div>
+                    : <div className={styles.stop} onClick={this.stopTimer}>Stop Timer</div>
+                }
                 <Modal show={this.state.showDelete} onHide={this.handleClose}>
                     <Modal.Body>
                         <img className={styles.alarm_delete} src={alarm_delete} alt="delete timer" />
