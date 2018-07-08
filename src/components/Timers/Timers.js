@@ -15,7 +15,7 @@ export default class Timers extends PureComponent {
         timers: PropTypes.arrayOf(
             PropTypes.shape({
                 id: PropTypes.string.isRequired,
-                name: PropTypes.string.isRequired,
+                name: PropTypes.string,
                 timeLeft: PropTypes.number.isRequired,
             })
         ).isRequired,

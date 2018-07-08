@@ -28,5 +28,5 @@ my-app/
 * `src/index.js` is the JavaScript entry point.
 
 
+### `yarn install`
 ### `yarn start`
-``
