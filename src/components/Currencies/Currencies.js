@@ -1,8 +1,16 @@
 import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
 import { currencyPresenter } from 'presenters/currencyPresenter';
 import styles from './Currencies.css';
 
 export class Currencies extends PureComponent {
+    static propTypes = {
+        rates: PropTypes.shape({
+            USD: PropTypes.number.isRequired,
+            EUR: PropTypes.number.isRequired,
+            RUB: PropTypes.number.isRequired,
+        }).isRequired,
+    };
     componentDidMount() {
         this.props.getCurrency();
     }

@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
 import { Grid, Col, Row, Modal, Form, FormControl, ControlLabel } from 'react-bootstrap';
 import { get } from 'lodash';
 import TimerItem from 'components/TimerItem';
@@ -10,6 +11,17 @@ import alarm from 'static/alarm-clock.png';
 import styles from  './Timers.css';
 
 export default class Timers extends PureComponent {
+    static propTypes = {
+        timers: PropTypes.arrayOf(
+            PropTypes.shape({
+                id: PropTypes.string.isRequired,
+                name: PropTypes.string.isRequired,
+                timeLeft: PropTypes.number.isRequired,
+            })
+        ).isRequired,
+        getTimers: PropTypes.func.isRequired,
+        addNewTimer: PropTypes.func.isRequired,
+    };
     state = {
         show: false,
         timer: {

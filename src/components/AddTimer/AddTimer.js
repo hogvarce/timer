@@ -1,4 +1,5 @@
 import React  from 'react';
+import PropTypes from 'prop-types';
 import add_icon from 'static/add_icon.png';
 import styles from './AddTimer.css';
 
@@ -8,5 +9,9 @@ const AddTimer = ({ addNewTimer }) => (
         <div className={styles.add_text}>ADD TIMER</div>
     </div>
 );
+
+AddTimer.propTypes = {
+    addNewTimer: PropTypes.func.isRequired,
+};
 
 export default AddTimer;
